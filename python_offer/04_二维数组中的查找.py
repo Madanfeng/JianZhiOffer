@@ -69,6 +69,26 @@ def findNumberIn2DArray_2(matrix, target):
     return False
 
 
+def findNumberIn2DArray_(matrix, target):
+    """二刷，思路：
+    这里从矩阵的右上角开始遍历，如果该值小于目标值，则目标值不可能在该行，则向下遍历；
+    如果该值大于目标值，则目标值不可能在该列，则向左遍历"""
+    # 注意matrix为空的情况
+    if not matrix:
+        return False
+    i = 0
+    j = len(matrix[0]) - 1
+    while i < len(matrix) and j >= 0:
+        if matrix[i][j] < target:
+            i += 1
+        elif matrix[i][j] > target:
+            j -= 1
+        else:
+            return True
+    return False
+
+
+
 m = [
   [1,   4,  7, 11, 15],
   [2,   5,  8, 12, 19],
@@ -77,4 +97,4 @@ m = [
   [18, 21, 23, 26, 30]
 ]
 
-print(findNumberIn2DArray_2(m, 33))
+print(findNumberIn2DArray_([[1, 1]], 2))
