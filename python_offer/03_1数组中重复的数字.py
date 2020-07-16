@@ -39,5 +39,18 @@ def findRepeatNumber_2(nums):
             nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
 
 
-a = [2,3,1,0,2,5,3]
-print(findRepeatNumber_2(a))
+def findRepeatNumber_(nums):
+    # 二刷
+    """思路：
+    因为长度为n的nums包含有0-n-1哥数字，则如果没有重复的数字，其每个数字正好是nums的下角标。
+    所以想找重复的数字，只要将数字放在对应的下角标中，若该下角标和值相等，则该值为重复的数字。"""
+    for i in range(len(nums)):
+        while nums[i] != i:
+            if nums[nums[i]] != nums[i]:
+                nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+            else:
+                return nums[i]
+
+
+a = [2, 3, 1, 0, 2, 5, 3]
+print(findRepeatNumber_(a))
