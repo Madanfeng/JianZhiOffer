@@ -32,5 +32,21 @@ def replaceSpace_2(s):
     return s.replace(" ", "%20")
 
 
+def replaceSpace_(s):
+    # 二刷
+    # 思路： 依次遍历
+    res = ""
+    for i in s:
+        if i == " ":
+            res += "%20"
+        else:
+            res += i
+    return s
+
+    # 思路二， python内置replace库
+    # return s.replace(" ", "%20")
+
+
+
 s = "We are happy."
 print(replaceSpace(s))

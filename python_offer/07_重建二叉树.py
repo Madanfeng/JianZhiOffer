@@ -44,6 +44,10 @@ def buildTree(preorder, inorder):
     return recur(0, 0, len(inorder)-1)
 
 
+def buildTree_(preorder, inorder):
+    # 二刷
+    pass
+
 # e1 = TreeNode(1)
 # e2 = TreeNode(2)
 # e3 = TreeNode(3)

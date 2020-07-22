@@ -39,3 +39,13 @@ def reversePrint_2(head):
             reversePrint_2(head.next)
         print(head.val)
 
+
+def reversePrint_(head):
+    # 二刷
+    # 思路：从头到尾遍历，逆序输出
+    p = head
+    res = []
+    while p:
+        res.append(p.val)
+        p = p.next
+    return res[::-1]
